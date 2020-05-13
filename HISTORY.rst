@@ -19,3 +19,9 @@ History
 ------------------
 
 * pypi complains filename has been used, increment version
+
+
+0.1.2 (13-05-2020)
+------------------
+
+* entry_point modified
