@@ -25,3 +25,9 @@ History
 ------------------
 
 * entry_point modified
+
+
+0.1.3 (13-05-2020)
+------------------
+
+* program blows up when no config file is provided - fixed
