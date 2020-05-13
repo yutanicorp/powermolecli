@@ -111,6 +111,7 @@ def parse_config_file(config_file_path):
         configuration = Configuration(config_file_path)
     except InvalidConfigurationFile:
         return None
+        # raise SystemExit(1)  # to keep it 'consistent' w/ develop design (powermolegui), no SystemExit() can be raised
     if configuration.mode == 'FILE':
         LOGGER.info('mode FILE enabled')
     elif configuration.mode == 'INTERACTIVE':
@@ -133,6 +134,8 @@ def main():
     coloredlogs_format = '%(asctime)s %(name)s[%(process)d] %(levelname)s %(message)s'
     coloredlogs.install(fmt=coloredlogs_format, level=args.log_level.upper())
     config = parse_config_file(args.config_file)
+    if not config:
+        return None
     try:
         with StateManager() as state:
             write_ssh_config_file(LOCAL_PATH_SSH_CFG, config.gateways, config.destination)
@@ -203,3 +206,4 @@ def main():
         # cannot be started (start()) successfully.
         LOGGER.error(msg)
         raise SystemExit(1)
+

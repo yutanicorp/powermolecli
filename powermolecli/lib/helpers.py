@@ -61,7 +61,7 @@ def setup_link(state, transferagent, tunnel, bootstrapagent, assistant):
         state (StateManager): An instantiated StateManager object.
         transferagent (TransferAgent): An instantiated TransferAgent object.
         tunnel (Tunnel): An instantiated Tunnel object.
-        bootstrapagent (BootstrapAgent): <>
+        bootstrapagent (BootstrapAgent): An instantiated BootstrapAgent object.
         assistant (Assistant): An instantiated Assistant object.
 
     """
