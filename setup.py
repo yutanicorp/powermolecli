@@ -45,7 +45,7 @@ setup(
                    'console_scripts': [
                        # enable this to automatically generate a script in /usr/local/bin called myscript that points to your
                        #  powermolecli.powermolecli:main method
-                       # 'myscript = powermolecli.powermolecli:main'
+                       'powermolecli = powermolecli.powermolecli:main'
                    ]},
     classifiers=[
         'Development Status :: 4 - Beta',
