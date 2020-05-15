@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e72815b83ff243a6ad7333317b19227506d9945c049a28d61fcc8d9ca3465abd"
+            "sha256": "d9b385ce318fcc8234c213bae48d834aa706db3a4b89211607ead70072337310"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -38,10 +38,10 @@
         },
         "powermolelib": {
             "hashes": [
-                "sha256:60efba64a3e9691d9d352146bf6526758aae7d379903656180bc4e65ef70418e"
+                "sha256:56c4b821b17c04664c099c43702c47d8398996cbaee792e812c7aaa903341a67"
             ],
             "index": "pypi",
-            "version": "==0.1.1"
+            "version": "==0.1.2"
         },
         "ptyprocess": {
             "hashes": [
@@ -589,11 +589,11 @@
         },
         "toml": {
             "hashes": [
-                "sha256:229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c",
-                "sha256:235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e"
+                "sha256:926b612be1e5ce0634a2ca03470f95169cf16f939018233a670519cb4ac58b0f",
+                "sha256:bda89d5935c2eac546d648028b9901107a595863cb36bae0c73ac804a9b4ce88"
             ],
             "index": "pypi",
-            "version": "==0.10.0"
+            "version": "==0.10.1"
         },
         "tox": {
             "hashes": [

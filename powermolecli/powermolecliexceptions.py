@@ -49,7 +49,7 @@ class SetupFailed(Exception):
     def __init__(self, obj):
         self.message = 'Unknown object provided'
         if isinstance(obj, TransferAgent):
-            self.message = f'could not copy agent module to last host'
+            self.message = f'could not copy agent module to intermediaries or destination host'
         if isinstance(obj, BootstrapAgent):
             self.message = f'could not execute agent module'
         if isinstance(obj, Tunnel):

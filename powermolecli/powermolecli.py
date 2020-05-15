@@ -35,6 +35,7 @@ import argparse
 import logging.config
 from time import sleep
 import coloredlogs
+import pexpect
 from powermolelib import (Configuration,
                           StateManager,
                           Heartbeat,
@@ -73,6 +74,7 @@ LOCAL_PROXY_PORT = 8080  # local port used to forward web traffic which exits la
 LOCAL_TRANSFER_PORT = 11700  # local port used to upload files to last host (only in FILE mode)
 LOCAL_COMMAND_PORT = 11800  # local port used to send linux commands to last host (only in INTERACTIVE mode)
 MACHINE_DEPLOY_PATH = '/tmp/'  # path on last host where the agent will be transferred to
+DEBUG = False  # to capture the output of the child (SSH), experimental
 
 
 def get_arguments():
@@ -156,8 +158,10 @@ def main():
                 tunnel = Tunnel(LOCAL_PATH_SSH_CFG, config.mode, config.all_hosts)
                 bootstrapagent = BootstrapAgent(tunnel, MACHINE_DEPLOY_PATH)
                 assistant = InteractiveAssistant(tunnel, LOCAL_COMMAND_PORT)
-            setup_link(state, transferagent, tunnel, bootstrapagent, assistant)
-            with Heartbeat(LOCAL_HEARTBEAT_PORT) as heartbeat:
+            else:  # superfluous, the conditions will always be met
+                SystemExit(1)
+            setup_link(state, transferagent, tunnel, bootstrapagent, assistant, debug=DEBUG)
+            with Heartbeat(LOCAL_HEARTBEAT_PORT):
                 if config.mode == 'FOR':
                     LOGGER.info('connections on local ports %s will be forwarded', config.forwarders_ports)
                     LOGGER.info('READY')
@@ -181,6 +185,8 @@ def main():
                 elif config.mode == 'FILE':
                     assistant.transfer(metadata_files=config.files)
                     raise SystemExit(0)
+                else:  # superfluous, the conditions will always be met
+                    SystemExit(1)
                 if config.application:
                     LOGGER.info('starting application...')
                     process = start_application(binary_name=config.application['binary_name'],
@@ -192,18 +198,15 @@ def main():
                         process.terminate()
                         raise SystemExit(0)
                 while True:
-                    if not heartbeat.is_tunnel_intact:
-                        LOGGER.error('encrypted tunnel has been broken')
-                    sleep(1)
-                #     while True:
-                #         if not heartbeat.is_tunnel_intact:
-                #             LOGGER.error('encrypted tunnel has been broken')
-                #         else:
-                #             sleep(1)
+                    if DEBUG:
+                        LOGGER.warning('debugging mode enabled')
+                        tunnel.debug()  # blocking!
+                        # raise KeyboardInterrupt
+                    tunnel.child.expect([pexpect.TIMEOUT], timeout=1)  # purge child's output due to limited buffer
+                    sleep(2)
     except SetupFailed as msg:
         # custom exception is defined in "minitorcliexceptions" and can only be raised by setup_link() in
         # the helpers module. the exception is raised when an object (eg. TransferAgent, Tunnel, Assistant)
         # cannot be started (start()) successfully.
         LOGGER.error(msg)
         raise SystemExit(1)
-

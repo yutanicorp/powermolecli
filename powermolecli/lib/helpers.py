@@ -50,7 +50,7 @@ LOGGER = logging.getLogger(LOGGER_BASENAME)  # non-class objects like functions 
 # LOGGER.addHandler(logging.NullHandler())  # method not in https://docs.python.org/3/library/logging.html
 
 
-def setup_link(state, transferagent, tunnel, bootstrapagent, assistant):
+def setup_link(state, transferagent, tunnel, bootstrapagent, assistant, debug=None):
     """Starts instantiated TransferAgents, opens instantiated Tunnel(s) and starts instantiated Machine(s).
 
     This function also passes the instantiated objects to the StateManager, which
@@ -63,6 +63,7 @@ def setup_link(state, transferagent, tunnel, bootstrapagent, assistant):
         tunnel (Tunnel): An instantiated Tunnel object.
         bootstrapagent (BootstrapAgent): An instantiated BootstrapAgent object.
         assistant (Assistant): An instantiated Assistant object.
+        debug(bool): if True enable debugging mode
 
     """
     if not transferagent.start():
@@ -70,9 +71,9 @@ def setup_link(state, transferagent, tunnel, bootstrapagent, assistant):
     LOGGER.info('agent has been transferred to last host')
 
     state.add_object(tunnel)
-    if not tunnel.start():
+    if not tunnel.start(debug=debug):
         raise SetupFailed(tunnel)
-    LOGGER.info('tunneling has been set up')
+    LOGGER.info('SSH connection through intermediaries has been established')
 
     # the BootstrapAgent object is a disposable one-trick pony
     if not bootstrapagent.start():
