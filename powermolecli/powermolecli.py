@@ -180,6 +180,7 @@ def main():
                             response_line = response_str.split('\n')
                             for line in response_line:
                                 print('>    %s' % line)
+                            tunnel.child.expect([pexpect.TIMEOUT], timeout=1)  # purge child's output due to buffer
                     except KeyboardInterrupt:
                         raise SystemExit(0)
                 elif config.mode == 'FILE':
@@ -193,7 +194,9 @@ def main():
                                                 binary_location=config.application['binary_location'])
                     try:
                         while True:
-                            sleep(1)
+                            tunnel.child.expect([pexpect.TIMEOUT],
+                                                timeout=1)  # purge child's output due to limited buffer
+                            sleep(5)
                     except KeyboardInterrupt:
                         process.terminate()
                         raise SystemExit(0)
@@ -201,11 +204,10 @@ def main():
                     if DEBUG:
                         LOGGER.warning('debugging mode enabled')
                         tunnel.debug()  # blocking!
-                        # raise KeyboardInterrupt
                     tunnel.child.expect([pexpect.TIMEOUT], timeout=1)  # purge child's output due to limited buffer
-                    sleep(2)
+                    sleep(5)
     except SetupFailed as msg:
-        # custom exception is defined in "minitorcliexceptions" and can only be raised by setup_link() in
+        # custom exception is defined in "powermolecliexceptions.py" and can only be raised by setup_link() in
         # the helpers module. the exception is raised when an object (eg. TransferAgent, Tunnel, Assistant)
         # cannot be started (start()) successfully.
         LOGGER.error(msg)

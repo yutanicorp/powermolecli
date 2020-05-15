@@ -68,7 +68,7 @@ def setup_link(state, transferagent, tunnel, bootstrapagent, assistant, debug=No
     """
     if not transferagent.start():
         raise SetupFailed(transferagent)
-    LOGGER.info('agent has been transferred to last host')
+    LOGGER.info('Agent has been transferred to destination host')
 
     state.add_object(tunnel)
     if not tunnel.start(debug=debug):
@@ -78,9 +78,9 @@ def setup_link(state, transferagent, tunnel, bootstrapagent, assistant, debug=No
     # the BootstrapAgent object is a disposable one-trick pony
     if not bootstrapagent.start():
         raise SetupFailed(bootstrapagent)
-    LOGGER.info('agent has been executed')
+    LOGGER.info('Agent has been executed')
 
     state.add_object(assistant)
     if not assistant.start():
         raise SetupFailed(assistant)
-    LOGGER.info('agent assistant has been executed')
+    LOGGER.info('Agent assistant has been executed')
