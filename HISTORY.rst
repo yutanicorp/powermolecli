@@ -31,3 +31,9 @@ History
 ------------------
 
 * program blows up when no config file is provided - fixed
+
+
+0.1.4 (15-05-2020)
+------------------
+
+* bug fixed (connections would freeze after a few minutes) + else branches added + wrote few lines of code for debugging purposes
