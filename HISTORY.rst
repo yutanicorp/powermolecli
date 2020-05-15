@@ -37,3 +37,9 @@ History
 ------------------
 
 * bug fixed (connections would freeze after a few minutes) + else branches added + wrote few lines of code for debugging purposes
+
+
+0.1.5 (15-05-2020)
+------------------
+
+* bug is really fixed now (connections would freeze after a few minutes)
