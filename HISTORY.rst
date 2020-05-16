@@ -55,3 +55,9 @@ History
 ------------------
 
 * dependency file(s) updated as newer version of lib has become more stable
+
+
+0.1.8 (17-05-2020)
+------------------
+
+* cli refactored due to changes in API of lib: class Assistant to Instructor renamed + critical bug fixed in new lib version
