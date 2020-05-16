@@ -30,7 +30,7 @@ Custom exception code for minitorcli.
    http://google.github.io/styleguide/pyguide.html
 
 """
-from powermolelib import TransferAgent, BootstrapAgent, Tunnel, Assistant
+from powermolelib import TransferAgent, BootstrapAgent, Tunnel, Instructor
 
 __author__ = '''Vincent Schouten <inquiry@intoreflection.co>'''
 __docformat__ = '''google'''
@@ -54,7 +54,7 @@ class SetupFailed(Exception):
             self.message = f'could not execute agent module'
         if isinstance(obj, Tunnel):
             self.message = f'could setting up tunneling'
-        if isinstance(obj, Assistant):
+        if isinstance(obj, Instructor):
             self.message = f'could not set up assistant to interact with agent on target destination host'
         # Call the base class constructor with the parameters it needs
         super().__init__(self.message)

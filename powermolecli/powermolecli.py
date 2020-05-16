@@ -42,10 +42,10 @@ from powermolelib import (Configuration,
                           write_ssh_config_file,
                           TransferAgent,
                           Tunnel,
-                          ForAssistant,
-                          TorAssistant,
-                          InteractiveAssistant,
-                          FileAssistant,
+                          ForInstructor,
+                          TorInstructor,
+                          InteractiveInstructor,
+                          FileInstructor,
                           BootstrapAgent)
 from powermolelib.powermolelibexceptions import InvalidConfigurationFile
 from .lib import setup_link
@@ -163,19 +163,19 @@ def main():  # pylint: disable=too-many-statements
                 tunnel = Tunnel(LOCAL_PATH_SSH_CFG, config.mode, config.all_hosts, GROUP_PORTS,
                                 config.forwarders_string)
                 bootstrapagent = BootstrapAgent(tunnel, GROUP_PORTS, MACHINE_DEPLOY_PATH)
-                assistant = ForAssistant(GROUP_PORTS)
+                assistant = ForInstructor(GROUP_PORTS)
             elif config.mode == 'TOR':
                 tunnel = Tunnel(LOCAL_PATH_SSH_CFG, config.mode, config.all_hosts, GROUP_PORTS)
                 bootstrapagent = BootstrapAgent(tunnel, GROUP_PORTS, MACHINE_DEPLOY_PATH)
-                assistant = TorAssistant(GROUP_PORTS, config.destination["host_ip"], config.destination["host_ip"])
+                assistant = TorInstructor(GROUP_PORTS, config.destination["host_ip"], config.destination["host_ip"])
             elif config.mode == 'FILE':
                 tunnel = Tunnel(LOCAL_PATH_SSH_CFG, config.mode, config.all_hosts, GROUP_PORTS)
                 bootstrapagent = BootstrapAgent(tunnel, GROUP_PORTS, MACHINE_DEPLOY_PATH)
-                assistant = FileAssistant(GROUP_PORTS)
+                assistant = FileInstructor(GROUP_PORTS)
             elif config.mode == 'INTERACTIVE':
                 tunnel = Tunnel(LOCAL_PATH_SSH_CFG, config.mode, config.all_hosts, GROUP_PORTS)
                 bootstrapagent = BootstrapAgent(tunnel, GROUP_PORTS, MACHINE_DEPLOY_PATH)
-                assistant = InteractiveAssistant(GROUP_PORTS)
+                assistant = InteractiveInstructor(GROUP_PORTS)
             else:  # superfluous, the conditions will always be met
                 SystemExit(1)
             setup_link(state, transferagent, tunnel, bootstrapagent, assistant, debug=DEBUG)
