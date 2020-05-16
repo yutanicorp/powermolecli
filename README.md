@@ -16,21 +16,21 @@ A program of choice can be started automatically (when the program states "READY
 For example, Mozilla Firefox (and with FOR mode, Mozilla Thunderbird).
 There are with 1 gateway (intermediate host) involved.
 
-![alt text](img/executing_powermole_tor_1_gateway.gif)
+![alt text](img/executing_powermole_tor_mode_1_gateway.gif)
 
 
 Running program with INTERACTIVE mode enabled.
 In this mode, a rudimentary terminal interface is provided which enables the user to interact with the target destination host.
 There is 1 gateway (intermediate host) involved.
 
-![alt text](img/executing_powermole_interactive_1_gateway.gif)
+![alt text](img/executing_powermole_interactive_mode_1_gateway.gif)
 
 
 Running program with FILE mode enabled.
 In this mode, files are transferred from localhost (client) to the target destination host.
 There are 1 gateway (intermediate host) involved.
 
-![alt text](img/executing_powermole_file_1_gateway.gif)
+![alt text](img/executing_powermole_file_mode_1_gateway.gif)
 
 
 ## How it works
