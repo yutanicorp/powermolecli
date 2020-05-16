@@ -14,9 +14,9 @@ Running program with TOR mode enabled.
 In this mode, the target destination host acts as an exit node (in TOR terminology).
 A program of choice can be started automatically (when the program states "READY") by setting the application directive in the configuration file
 For example, Mozilla Firefox (and with FOR mode, Mozilla Thunderbird).
-There are with 1 gateway (intermediate host) involved.
+There are with 2 gateways (intermediate hosts) involved.
 
-![alt text](img/executing_powermole_tor_mode_1_gateway.gif)
+![alt text](img/executing_powermole_tor_mode_2_gateway.gif)
 
 
 Running program with INTERACTIVE mode enabled.
