@@ -49,3 +49,9 @@ History
 ------------------
 
 * cli refactored due to changes in API of lib: the constant GROUP_PORTS has to be passed to several classes and the new method named tunnel.periodically_purge_buffer() has to be invoked once
+
+
+0.1.7 (16-05-2020)
+------------------
+
+* dependency file(s) updated as newer version of lib has become more stable
