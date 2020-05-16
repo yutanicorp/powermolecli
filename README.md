@@ -36,14 +36,14 @@ There are 1 gateway (intermediate host) involved.
 ## How it works
 
 ### Terminology
-* **tunnel** is an established connection from localhost to target destination host through intermediate hosts (called Gateways).
-* **agent** is a python module running on the target destination host. It performs various functions.
-* **instructor** sends data and instructions to the *agent* by using a forwarded connection.
+* **Tunnel** is an established connection from localhost to target destination host through intermediate hosts (called Gateways).
+* **Agent** is a python module running on the target destination host. It performs various functions.
+* **Instructor** sends data and instructions to the *Agent* by utilizing a forwarded connection provided by *Tunnel*.
 
-This cli package uses the lib package to create a tunnel and models the specific instructor to communicate with the agent (on the target destination host).
-The agent communicates directly with the operating system of the host on which it resides.
-The agent is responsible to redirect internet traffic (TOR mode), put files (FILE mode), and issue commands (INTERACTIVE mode).
-For port forwarding (FOR mode), the program simply relies on ssh itself. The agent also responds to heartbeats send by localhost to check if connection is still intact.
+This cli package uses the lib package to create a Tunnel and models the specific Instructor to communicate with the Agent (on the target destination host).
+The Agent communicates directly with the operating system of the host on which it resides.
+The Agent is responsible to redirect internet traffic (TOR mode), put files (FILE mode), and issue commands (INTERACTIVE mode).
+For port forwarding (FOR mode), the program simply relies on SSH itself. The Agent also responds to heartbeats send by localhost to check if connection is still intact.
 
 ![alt text](img/illustration_how_it_works.png)
 
@@ -141,9 +141,9 @@ In FILE mode, files are transferred from client to the target destination host.
 #### To enable TOR mode
 
 Edit the JSON document in the configuration file to incorporate the keywords **mode**, **gateways**, **destination**, and optionally **application**.
-When **application** is specified, the program will start the application of choice once the tunnel is ready.
+When **application** is specified, the program will start the application of choice once the Tunnel is ready.
 In the example below, the program drills through 3 hosts and ends at host #4.
-Hitting ctrl + c in terminal will dismantle tunnel (and stop application)
+Hitting ctrl + c in terminal will dismantle Tunnel (and stop application)
 
 ```
     {
@@ -168,8 +168,8 @@ Hitting ctrl + c in terminal will dismantle tunnel (and stop application)
 #### To enable FOR(warding) mode
 
 Edit the JSON document to incorporate the keywords **mode**, **gateways**, **destination**, **forwarders**, and optionally **application**.
-When application is specified, then the program will start this application once the tunnel is ready.
-Hitting ctrl + c in terminal will dismantle tunnel (and stop application)
+When application is specified, then the program will start this application once the Tunnel is ready.
+Hitting ctrl + c in terminal will dismantle Tunnel (and stop application)
 
 ```
     {
@@ -192,7 +192,7 @@ Hitting ctrl + c in terminal will dismantle tunnel (and stop application)
 #### To enable INTERACTIVE mode
 
 Edit the JSON document to incorporate the keywords **mode**, **gateways**, and **destination**.
-Hitting ctrl + c in terminal will dismantle tunnel.
+Hitting ctrl + c in terminal will dismantle Tunnel.
 
 ```
     {
@@ -235,7 +235,7 @@ The format of the configuration file will be modified to include:
   - for mode FILE "direction", which can have value UPLOAD|DOWNLOAD (note: only UPLOAD is available)
 
 The program lacks the ability to choose a correct Python interpreter. The program will
-start the agent module on destination host with the Python 3.6 interpreter. This is
+start the Agent module on destination host with the Python 3.6 interpreter. This is
 hardcoded, but a future release should also include a mechanism to use a higher version
 of Python if available.
 
