@@ -15,12 +15,12 @@ Terminology:
 
 * **tunnel** is an established connection from localhost to target destination host through intermediate hosts (called Gateways).
 * **agent** is a python module running on the target destination host. It performs various functions.
-* **agent assistant** sends data and instructions to the *agent* by using a forwarded connection.
+* **instructor** sends data and instructions to the *agent* by using a forwarded connection.
 
-This cli package uses the core package to create a tunnel and models the specific agent assistant to communicate with the agent (on the target destination host).
+This cli package uses the lib package to create a tunnel and models the specific instructor to communicate with the agent (on the target destination host).
 The agent communicates directly with the operating system of the host on which it resides.
 The agent is responsible to redirect internet traffic (TOR mode), put files (FILE mode), and issue commands (INTERACTIVE mode).
-For port forwarding (FOR mode), the program simply relies on ssh itself. The agent also responds to heartbeats send by local host to check if connection is still intact.
+For port forwarding (FOR mode), the program simply relies on ssh itself. The agent also responds to heartbeats send by localhost to check if connection is still intact.
 
 .. image:: ../img/illustration_how_it_works.png
 
