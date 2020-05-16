@@ -50,7 +50,8 @@ LOGGER = logging.getLogger(LOGGER_BASENAME)  # non-class objects like functions 
 # LOGGER.addHandler(logging.NullHandler())  # method not in https://docs.python.org/3/library/logging.html
 
 
-def setup_link(state, transferagent, tunnel, bootstrapagent, assistant, debug=None):
+def setup_link(state, transferagent, tunnel, bootstrapagent, assistant,  # pylint: disable=too-many-arguments
+               debug=None):
     """Starts instantiated TransferAgents, opens instantiated Tunnel(s) and starts instantiated Machine(s).
 
     This function also passes the instantiated objects to the StateManager, which
@@ -83,4 +84,4 @@ def setup_link(state, transferagent, tunnel, bootstrapagent, assistant, debug=No
     state.add_object(assistant)
     if not assistant.start():
         raise SetupFailed(assistant)
-    LOGGER.info('Agent assistant has been executed')
+    LOGGER.info('Instructor has been executed')

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d9b385ce318fcc8234c213bae48d834aa706db3a4b89211607ead70072337310"
+            "sha256": "4a330be63754ccdc00031519c40594aa51af08d88aece0733d402be47706bc51"
         },
         "pipfile-spec": 6,
         "requires": {},
@@ -38,10 +38,10 @@
         },
         "powermolelib": {
             "hashes": [
-                "sha256:56c4b821b17c04664c099c43702c47d8398996cbaee792e812c7aaa903341a67"
+                "sha256:70b0cd40d91fe2a90ce1ccf19e6045c1bdbbb829764481e9261f7f4125d0334f"
             ],
             "index": "pypi",
-            "version": "==0.1.2"
+            "version": "==1.0.0"
         },
         "ptyprocess": {
             "hashes": [
