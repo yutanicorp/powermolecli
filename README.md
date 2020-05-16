@@ -5,6 +5,7 @@
 This program will let you perform port forwarding, redirect internet traffic, and transfer files to, and issue commands on,
 a host without making a direct connection (ie. via one or more intermediate hosts), which would undoubtedly compromise your privacy.
 This solution can only work when you or your peers own one or more hosts as this program communicates with SSH servers.
+This program can be viewed as a multi-versatile wrapper around SSH with the ProxyJump directive enabled.
 
 
 ## Demo
@@ -176,8 +177,11 @@ Hitting ctrl + c in terminal will dismantle tunnel (and stop application)
     "gateways":    [{"host_ip": "10.10.1.72",
                      "user": "root",
                      "identity_file": "/home/vincent/.ssh/id_rsa_be_vm"}],
-    "forwarders": [{"local_port": 1995,
-                    "remote_interface": "[2a01:7c8:aac3:1e1:2a01:ffaa:a:241]",
+    "forwarders": [{"local_port": 1587,
+                    "remote_interface": "localhost",
+                    "remote_port": 587},
+                   {"local_port": 1995,
+                    "remote_interface": "localhost",
                     "remote_port": 995}],
     "destination": {"host_ip": "10.10.2.92",
                     "user": "root",
