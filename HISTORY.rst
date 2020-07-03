@@ -61,3 +61,9 @@ History
 ------------------
 
 * cli refactored due to changes in API of lib: class Assistant to Instructor renamed + critical bug fixed in new lib version
+
+
+0.1.10 (04-07-2020)
+-------------------
+
+* dependency file updated as powermolelib bumped to version 2.0.1
