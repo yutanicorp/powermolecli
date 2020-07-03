@@ -116,7 +116,7 @@ The JSON file contains directives to enter one of the modes listed below:
 * TOR mode
 * FOR(warding) mode
 * INTERACTIVE mode
-* FILE mode
+* FILE mode &nbsp; __(note: this mode will be heavily improved in next release)__
 
 
 In TOR mode, the target destination host acts as an exit node (in TOR terminology).
