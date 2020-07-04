@@ -6,7 +6,7 @@ This program will let you perform port forwarding, redirect internet traffic, an
 a host without making a direct connection (ie. via one or more intermediate hosts), which would undoubtedly compromise your privacy.
 This solution can only work when you or your peers own one or more hosts as this program communicates with SSH servers.
 This program can be viewed as a multi-versatile wrapper around SSH with the ProxyJump directive enabled.
-
+Powermole creates automatically a ssh/scp configuration file to enable key-based authentication with the intermediate hosts.
 
 ## Demo
 
@@ -52,15 +52,15 @@ For more details, including illustrations, please consult the [corelib](https://
 
 ## Requirements (software)
 
-* Every host (except local host, the _client_) needs a running SSH daemon.
+* Every host (except local host, ie. the _client_) needs a running SSH daemon.
 
 
 ## Requirements (functional)
 
-* The solution doesn't work with Windows, only on Linux (tested on Red Hat).
-* The client and all servers have Python >3.6 as their default interpreter.
-* You need _at least_ 1 server.
-* Have the associated SSH identification file (i.e. the private key) for these servers.
+* The solution doesn't work with Windows, only on Linux (tested Red Hat, CentOS, Fedora).
+* The client and all intermediate hosts (Gateways) have Python >3.6 as their default interpreter.
+* You need _at least_ 1 intermediate host (Gateway).
+* You have the associated SSH identification file (i.e. the private key) for these intermediaries.
 * Due to security reasons, SSH password login is not supported.
 * This program don't require root privileges on client (*to be confirmed*).
 
