@@ -73,3 +73,9 @@ History
 ------------------
 
 * bug in powermolelib fixed, therefore Pipfile updated to include latest version
+
+
+0.3.0 (04-07-2020)
+------------------
+
+* bug in powermolelib fixed, therefore Pipfile updated to include latest version
