@@ -67,3 +67,9 @@ History
 -------------------
 
 * dependency file updated as powermolelib bumped to version 2.0.1
+
+
+0.2.0 (04-07-2020)
+------------------
+
+* bug in powermolelib fixed, therefore Pipfile updated to include latest version
