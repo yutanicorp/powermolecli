@@ -37,9 +37,10 @@ Requirements (software)
 Requirements (functional)
 =========================
 
-* The solution doesn't work with Windows, only on Linux (tested Red Hat, CentOS, Fedora).
-* The client and all intermediate hosts (Gateways) have Python >3.6 as their default interpreter.
-* You need *at least* 1 intermediate host (Gateway).
+* The client program only works on MacOS and Linux (tested Red Hat, CentOS, Fedora).
+* The intermediate hosts (Gateways) must be Linux.
+* The client and all Gateways have Python >3.6 as their default interpreter.
+* You need *at least* 1 Gateway.
 * You have the associated SSH identification file (i.e. the private key) for these intermediaries.
 * Due to security reasons, SSH password login is not supported.
 * This program don't require root privileges on client (*to be confirmed*).
