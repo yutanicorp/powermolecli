@@ -85,3 +85,9 @@ History
 ------------------
 
 * bug in powermolelib fixed, therefore Pipfile updated to include latest version
+
+
+0.4.1 (31-10-2020)
+------------------
+
+* required package powermolelib incremented + several loggers added + example configuration files in README updated
