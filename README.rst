@@ -137,16 +137,16 @@ Hitting ctrl + c in terminal will dismantle Tunnel (and stop application)
     "mode":         "TOR",
     "gateways":    [{"host_ip": "10.10.1.72",
                      "user": "root",
-                     "identity_file": "/home/vincent/.ssh/id_rsa_be_vm"},
+                     "identity_file": "~/.ssh/id_rsa_be_vm"},
                     {"host_ip": "10.10.2.92",
                      "user": "root",
-                     "identity_file": "/home/vincent/.ssh/id_rsa_it_vm"},
+                     "identity_file": "~/.ssh/id_rsa_it_vm"},
                     {"host_ip": "10.10.3.52",
                      "user": "root",
-                     "identity_file": "/home/vincent/.ssh/id_rsa_es_vm"}],
+                     "identity_file": "~/.ssh/id_rsa_es_vm"}],
     "destination": {"host_ip": "10.10.4.31",
                     "user": "root",
-                    "identity_file": "/home/vincent/.ssh/id_rsa_gr_vm"},
+                    "identity_file": "~/.ssh/id_rsa_gr_vm"},
     "application": {"binary_name": "firefox",
                     "binary_location": "/usr/bin/firefox"}
     }
@@ -164,7 +164,7 @@ Hitting ctrl + c in terminal will dismantle Tunnel (and stop application)
     "mode":         "FOR",
     "gateways":    [{"host_ip": "10.10.1.72",
                      "user": "root",
-                     "identity_file": "/home/vincent/.ssh/id_rsa_be_vm"}],
+                     "identity_file": "~/.ssh/id_rsa_be_vm"}],
     "forwarders": [{"local_port": 1587,
                     "remote_interface": "localhost",
                     "remote_port": 587},
@@ -173,7 +173,7 @@ Hitting ctrl + c in terminal will dismantle Tunnel (and stop application)
                     "remote_port": 995}],
     "destination": {"host_ip": "10.10.2.92",
                     "user": "root",
-                    "identity_file": "/home/vincent/.ssh/id_rsa_it_vm"}
+                    "identity_file": "~/.ssh/id_rsa_it_vm"}
     }
 
 
@@ -188,10 +188,10 @@ Hitting ctrl + c in terminal will dismantle Tunnel.
     "mode":         "INTERACTIVE",
     "gateways":    [{"host_ip": "10.10.1.72",
                      "user": "root",
-                     "identity_file": "/home/vincent/.ssh/id_rsa_be_vm"],
+                     "identity_file": "~/.ssh/id_rsa_be_vm"],
     "destination": {"host_ip": "10.10.2.92",
                     "user": "root",
-                    "identity_file": "/home/vincent/.ssh/id_rsa_it_vm"}
+                    "identity_file": "~/.ssh/id_rsa_it_vm"}
     }
 
 
@@ -205,10 +205,10 @@ Edit the JSON document to incorporate the keywords **mode**, **gateways**, **des
     "mode":         "FILE",
     "gateways":    [{"host_ip": "10.10.1.72",
                      "user": "root",
-                     "identity_file": "/home/vincent/.ssh/id_rsa_be_vm"}],
+                     "identity_file": "~/.ssh/id_rsa_be_vm"}],
     "destination": {"host_ip": "10.10.2.92",
                     "user": "root",
-                    "identity_file": "/home/vincent/.ssh/id_rsa_it_vm"},
+                    "identity_file": "~/.ssh/id_rsa_it_vm"},
     "files":      [{"source": "/home/vincent/amsterdam_de_jordaan.jpg",
                     "destination": "/tmp"},
                    {"source": "/home/vincent/amsterdam_nine_streets.jpg",

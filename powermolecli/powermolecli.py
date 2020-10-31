@@ -128,6 +128,9 @@ def parse_config_file(config_file_path):
     """Parses the configuration file to a (dictionary) object."""
     try:
         configuration = Configuration(config_file_path)
+        LOGGER.debug('Gateways: %s', configuration.gateways)
+        LOGGER.debug('Destination: %s', configuration.destination)
+        LOGGER.debug('Forwarders: %s', configuration.forwarders_string)
     except InvalidConfigurationFile:
         return None
         # raise SystemExit(1)  # to keep it 'consistent' w/ develop design (powermolegui), no SystemExit() can be raised

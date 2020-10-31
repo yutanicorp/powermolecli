@@ -49,12 +49,12 @@ class SetupFailed(Exception):
     def __init__(self, obj):
         self.message = 'Unknown object provided'
         if isinstance(obj, TransferAgent):
-            self.message = f'could not copy agent module to intermediaries or destination host'
+            self.message = 'could not copy agent module to intermediaries or destination host'
         if isinstance(obj, BootstrapAgent):
-            self.message = f'could not execute agent module'
+            self.message = 'could not execute agent module'
         if isinstance(obj, Tunnel):
-            self.message = f'could setting up tunneling'
+            self.message = 'could setting up tunneling'
         if isinstance(obj, Instructor):
-            self.message = f'could not set up assistant to interact with agent on target destination host'
+            self.message = 'could not set up assistant to interact with agent on target destination host'
         # Call the base class constructor with the parameters it needs
         super().__init__(self.message)
