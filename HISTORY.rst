@@ -121,3 +121,9 @@ History
 ------------------
 
 * Update dependency to latest powermole library package
+
+
+1.0.5 (01-06-2021)
+------------------
+
+* Update dependency to latest powermole library package
