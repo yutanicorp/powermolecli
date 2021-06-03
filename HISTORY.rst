@@ -18,112 +18,111 @@ History
 0.1.1 (13-05-2020)
 ------------------
 
-* pypi complains filename has been used, increment version
+* <None>
 
 
 0.1.2 (13-05-2020)
 ------------------
 
-* entry_point modified
+* <None>
 
 
 0.1.3 (13-05-2020)
 ------------------
 
-* program blows up when no config file is provided - fixed
+* Fix bug
 
 
 0.1.4 (15-05-2020)
 ------------------
 
-* bug fixed (connections would freeze after a few minutes) + else branches added + wrote few lines of code for debugging purposes
+* Fix bug, add loggers
 
 
 0.1.5 (15-05-2020)
 ------------------
 
-* bug is really fixed now (connections would freeze after a few minutes)
+* Fix bug
 
 
 0.1.6 (16-05-2020)
 ------------------
 
-* cli refactored due to changes in API of lib: the constant GROUP_PORTS has to be passed to several classes and the new method named tunnel.periodically_purge_buffer() has to be invoked once
+* Refactor code to handle changes in library package
 
 
 0.1.7 (16-05-2020)
 ------------------
 
-* dependency file(s) updated as newer version of lib has become more stable
+* Bump dependency to latest powermole library package
 
 
 0.1.8 (17-05-2020)
 ------------------
 
-* cli refactored due to changes in API of lib: class Assistant to Instructor renamed + critical bug fixed in new lib version
+* Refactor main code to handle with renamed classes in library package
 
 
 0.1.10 (04-07-2020)
 -------------------
 
-* dependency file updated as powermolelib bumped to version 2.0.1
+* Bump dependency to latest powermole library package
 
 
 0.2.0 (04-07-2020)
 ------------------
 
-* bug in powermolelib fixed, therefore Pipfile updated to include latest version
+* Bump dependency to latest powermole library package
 
 
 0.3.0 (04-07-2020)
 ------------------
 
-* bug in powermolelib fixed, therefore Pipfile updated to include latest version
+* Bump dependency to latest powermole library package
 
 
 0.4.0 (04-07-2020)
 ------------------
 
-* bug in powermolelib fixed, therefore Pipfile updated to include latest version
+* Bump dependency to latest powermole library package
 
 
 0.4.1 (31-10-2020)
 ------------------
 
-* required package powermolelib incremented + several loggers added + example configuration files in README updated
+* Bump dependency to latest powermole library package, add several loggers, refactor template configuration files
 
 
 1.0.0 (26-03-2021)
 ------------------
 
-* PLAIN mode added and COMMAND and FILE modes are turned into options, accessible by a menu, as the library package has been refactored
+* Add PLAIN mode, drop COMMAND & FILE modes, add COMMAND and FILE options
 
 
 1.0.1 (11-04-2021)
 ------------------
 
-* show_menu() refactored + new logger module created
+* Optimize menu, add new logger module
 
 
 1.0.2 (27-04-2021)
 ------------------
 
-* Change a log name's colour and update Pipfile
+* Redraw style of levelname, bump dependency
 
 
 1.0.3 (17-05-2021)
 ------------------
 
-* Update dependency to latest powermole library package
+* Optimize menu, bump dependency to latest powermole library package
 
 
 1.0.4 (25-05-2021)
 ------------------
 
-* Update dependency to latest powermole library package
-
+* Refactor parameter to work with powermole library, bump dependency to latest powermole library package
 
 1.0.5 (01-06-2021)
 ------------------
 
-* Update dependency to latest powermole library package
+* Reword documentation, add feature to set heartbeat interval value, bump dependency to latest powermole library package
