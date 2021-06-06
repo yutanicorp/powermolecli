@@ -126,3 +126,9 @@ History
 ------------------
 
 * Reword documentation, add feature to set heartbeat interval value, bump dependency to latest powermole library package
+
+
+1.0.6 (06-06-2021)
+------------------
+
+* Bump dependency to latest powermole library packag,e, redraw animation for demo purposes, reword commit messages associated with releases, reword list of keywords for PyPi, reword instructions how to execute powermolecli
