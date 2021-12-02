@@ -132,3 +132,9 @@ History
 ------------------
 
 * Bump dependency to latest powermole library packag,e, redraw animation for demo purposes, reword commit messages associated with releases, reword list of keywords for PyPi, reword instructions how to execute powermolecli
+
+
+1.0.7 (02-12-2021)
+------------------
+
+* Bump dependency to latest powermole library packag
