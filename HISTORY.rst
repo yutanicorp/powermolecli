@@ -138,3 +138,9 @@ History
 ------------------
 
 * Bump dependency to latest powermole library packag
+
+
+1.0.8 (19-12-2021)
+------------------
+
+* Bump dependency to latest powermole library package
