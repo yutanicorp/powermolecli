@@ -119,7 +119,7 @@ Configuration
 
 To enable TOR mode
 ------------------
-Edit the JSON document in the configuration file to incorporate the keywords **mode**, **proxies**, **destination**, and optionally **application**.
+Edit the JSON document in the configuration file to incorporate the keywords **mode**, **proxies**, **destination**, and *optionally* **application** (shown below) and **port**.
 When **application** is specified, powermole will start the application of choice once the tunnel is ready.
 Please note, if an instance of that application (eg. Firefox) is already running, powermole will terminate immediately.
 In the example below, powermole drills through 3 intermediate hosts and ends at host #4.
@@ -145,7 +145,7 @@ Hitting ctrl + c in terminal will dismantle the tunnel (and stop application)
 
 To enable FOR(warding) mode
 ---------------------------
-Edit the JSON document to incorporate the keywords **mode**, **proxies**, **destination**, **forwarders**, and optionally **application**.
+Edit the JSON document to incorporate the keywords **mode**, **proxies**, **destination**, **forwarders**, and *optionally* **application** and **port** (shown below).
 When application is specified, then the program will start this application once the tunnel is ready.
 Please note, if an instance of that application (eg. Thunderbird) is already running, powermole will terminate immediately.
 Hitting ctrl + c in terminal will dismantle the tunnel (and abort application).
@@ -155,12 +155,15 @@ Hitting ctrl + c in terminal will dismantle the tunnel (and abort application).
     {
     "mode":         "FOR",
     "gateways":    [{"host_ip": "192.168.10.2",
+                     "port": 22,
                      "user": "root",
                      "identity_file": "/Users/vincent/.ssh/id_rsa_pl"},
                     {"host_ip": "192.168.10.3",
+                     "port": 22,
                      "user": "root",
                      "identity_file": "/Users/vincent/.ssh/id_rsa_cz"}],
     "destination": {"host_ip": "192.168.10.4",
+                    "port": 22,
                     "user": "root",
                     "identity_file": "/Users/vincent/.ssh/id_rsa_nl"},
     "forwarders": [{"local_port": 1587,

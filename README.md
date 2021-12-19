@@ -128,7 +128,7 @@ In FOR(warding) mode, connections are forwarded to the target destination host, 
 
 #### To enable TOR mode
 
-Edit the JSON document in the configuration file to incorporate the keywords **mode**, **gateways**, **destination**, and optionally **application**.
+Edit the JSON document in the configuration file to incorporate the keywords **mode**, **gateways**, **destination**, and *optionally* **application** (shown below) and **port**.
 When **application** is specified, the program will start the application of choice once the Tunnel is ready.
 In the example below, the program drills through 3 hosts and ends at host #4.
 Hitting ctrl + c in terminal will dismantle the Tunnel (and abort the application)
@@ -152,7 +152,7 @@ Hitting ctrl + c in terminal will dismantle the Tunnel (and abort the applicatio
 
 #### To enable FOR(warding) mode
 
-Edit the JSON document to incorporate the keywords **mode**, **gateways**, **destination**, **forwarders**, and optionally **application**.
+Edit the JSON document to incorporate the keywords **mode**, **gateways**, **destination**, **forwarders**, and *optionally* **application** and **port** (shown below).
 When application is specified, then the program will start this application once the Tunnel is ready.
 Hitting ctrl + c in terminal will dismantle the Tunnel (and abort the application)
 
@@ -160,12 +160,15 @@ Hitting ctrl + c in terminal will dismantle the Tunnel (and abort the applicatio
     {
     "mode":         "FOR",
     "gateways":    [{"host_ip": "192.168.10.2",
+                     "port": 22,
                      "user": "root",
                      "identity_file": "/Users/vincent/.ssh/id_rsa_pl"},
                     {"host_ip": "192.168.10.3",
+                     "port": 22,
                      "user": "root",
                      "identity_file": "/Users/vincent/.ssh/id_rsa_cz"}],
     "destination": {"host_ip": "192.168.10.4",
+                    "port": 22,
                     "user": "root",
                     "identity_file": "/Users/vincent/.ssh/id_rsa_nl"},
     "forwarders": [{"local_port": 1587,
