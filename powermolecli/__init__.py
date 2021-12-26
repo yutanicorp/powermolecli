@@ -24,7 +24,7 @@
 #
 
 """
-Import all parts from minitorcli here.
+Import all parts from powermolecli here.
 
 .. _Google Python Style Guide:
    http://google.github.io/styleguide/pyguide.html
@@ -32,13 +32,13 @@ Import all parts from minitorcli here.
 from ._version import __version__
 from .powermolecliexceptions import SetupFailed
 
-__author__ = '''Vincent Schouten <inquiry@intoreflection.co>'''
+__author__ = '''Vincent Schouten <powermole@protonmail.com>'''
 __docformat__ = '''google'''
 __date__ = '''06-04-2019'''
 __copyright__ = '''Copyright 2019, Vincent Schouten'''
 __license__ = '''MIT'''
 __maintainer__ = '''Vincent Schouten'''
-__email__ = '''<inquiry@intoreflection.co>'''
+__email__ = '''<powermole@protonmail.com>'''
 __status__ = '''Development'''  # "Prototype", "Development", "Production".
 
 # This is to 'use' the module(s), so lint doesn't complain

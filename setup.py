@@ -32,7 +32,7 @@ setup(
     long_description=readme + '\n\n' + history,
     # long_description_content_type='text/x-rst',
     author='''Vincent Schouten''',
-    author_email='''inquiry@intoreflection.co''',
+    author_email='''powermole@protonmail.com''',
     url='''https://github.com/yutanicorp/powermolecli''',
     packages=find_packages(where='.', exclude=('tests', 'hooks', '_CI*')),
     package_dir={'''powermolecli''':

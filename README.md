@@ -129,20 +129,24 @@ In FOR(warding) mode, connections are forwarded to the target destination host, 
 #### To enable TOR mode
 
 Edit the JSON document in the configuration file to incorporate the keywords **mode**, **gateways**, **destination**, and *optionally* **application** (shown below) and **port**.
-When **application** is specified, the program will start the application of choice once the Tunnel is ready.
-In the example below, the program drills through 3 hosts and ends at host #4.
-Hitting ctrl + c in terminal will dismantle the Tunnel (and abort the application)
+When **application** is specified, then powermole will start the application of choice once the tunnel is ready.
+Please note, if an instance of that application (eg. Firefox) is already running, powermole will terminate immediately.
+In the example below, powermole drills through 2 intermediate hosts.
+Hitting Ctrl-C in terminal will dismantle the tunnel (and stop the application).
+
+~~Note: Each server has two interfaces.~~
+~~If your servers don't have two interfaces, just use the ip address of "ip_in" for "ip_out".~~
 
 ```
     {
     "mode":         "TOR",
-    "gateways":    [{"host_ip": "192.168.10.2",
+    "gateways":    [{"host_ip": "192.168.56.10",
                      "user": "root",
                      "identity_file": "/Users/vincent/.ssh/id_rsa_pl"},
-                    {"host_ip": "192.168.10.3",
+                    {"host_ip": "192.168.56.11",
                      "user": "root",
                      "identity_file": "/Users/vincent/.ssh/id_rsa_cz"}],
-    "destination": {"host_ip": "192.168.10.4",
+    "destination": {"host_ip": "192.168.56.12",
                     "user": "root",
                     "identity_file": "/Users/vincent/.ssh/id_rsa_nl"},
     "application": {"binary_name": "firefox",
@@ -153,24 +157,20 @@ Hitting ctrl + c in terminal will dismantle the Tunnel (and abort the applicatio
 #### To enable FOR(warding) mode
 
 Edit the JSON document to incorporate the keywords **mode**, **gateways**, **destination**, **forwarders**, and *optionally* **application** and **port** (shown below).
-When application is specified, then the program will start this application once the Tunnel is ready.
-Hitting ctrl + c in terminal will dismantle the Tunnel (and abort the application)
+In the example below, powermole drills through 1 intermediate host.
+Hitting Ctrl-C in terminal will dismantle the Tunnel.
 
 ```
     {
     "mode":         "FOR",
-    "gateways":    [{"host_ip": "192.168.10.2",
+    "gateways":    [{"host_ip": "192.168.56.10",
                      "port": 22,
                      "user": "root",
-                     "identity_file": "/Users/vincent/.ssh/id_rsa_pl"},
-                    {"host_ip": "192.168.10.3",
-                     "port": 22,
-                     "user": "root",
-                     "identity_file": "/Users/vincent/.ssh/id_rsa_cz"}],
-    "destination": {"host_ip": "192.168.10.4",
+                     "identity_file": "/Users/vincent/.ssh/id_rsa_pl"}],
+    "destination": {"host_ip": "192.168.56.11",
                     "port": 22,
                     "user": "root",
-                    "identity_file": "/Users/vincent/.ssh/id_rsa_nl"},
+                    "identity_file": "/Users/vincent/.ssh/id_rsa_cz"},
     "forwarders": [{"local_port": 1587,
                     "remote_interface": "localhost",
                     "remote_port": 587},

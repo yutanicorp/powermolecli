@@ -46,14 +46,14 @@ from powermolecli.lib.helpers import setup_link, parse_config_file, show_menu
 from powermolecli.lib.logging import LOGGER_BASENAME
 from powermolecli.powermolecliexceptions import SetupFailed
 
-__author__ = '''Vincent Schouten <inquiry@intoreflection.co>'''
+__author__ = '''Vincent Schouten <powermole@protonmail.com>'''
 __docformat__ = '''google'''
 __date__ = '''12-05-2020'''
 __copyright__ = '''Copyright 2021, Vincent Schouten'''
 __credits__ = ["Vincent Schouten"]
 __license__ = '''MIT'''
 __maintainer__ = '''Vincent Schouten'''
-__email__ = '''<inquiry@intoreflection.co>'''
+__email__ = '''<powermole@protonmail.com>'''
 __status__ = '''Development'''  # "Prototype", "Development", "Production".
 
 # This is the main prefix used for logging
@@ -159,8 +159,11 @@ def main():
             tunnel.periodically_purge_buffer()
             with Heartbeat(GROUP_PORTS["local_port_heartbeat"], HEARTBEAT_INTERVAL):
                 LOGGER.info(message)
-                input('READY - Press the <<Enter>> key for options...\n')
-                show_menu(config, instructor)
+                try:
+                    input('READY - Press the <<Enter>> key for options...\n')
+                    show_menu(config, instructor)
+                except EOFError:
+                    LOGGER.debug("EOF caught")
     except SetupFailed as msg:
         # custom exception is defined in "powermolecliexceptions.py" and can only be raised by setup_link() in
         # the helpers module. the exception is raised when an object (eg. TransferAgent, Tunnel, Assistant)
