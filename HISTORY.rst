@@ -149,4 +149,4 @@ History
 1.0.9 (26-12-2021)
 ------------------
 
-* Bump dependency, reword email address, and add EOF handling
+* Bump dependency to latest powermole library package, reword email address, and add EOF handling
