@@ -150,3 +150,9 @@ History
 ------------------
 
 * Bump dependency to latest powermole library package, reword email address, and add EOF handling
+
+
+1.0.10 (28-12-2022)
+-------------------
+
+* Fix security vulnerability in 3rd party package
