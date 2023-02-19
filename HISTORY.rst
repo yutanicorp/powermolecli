@@ -162,3 +162,9 @@ History
 -------------------
 
 * Fix development workflow
+
+
+1.0.12 (19-02-2023)
+-------------------
+
+* Bump dependency to latest powermole library package
