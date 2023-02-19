@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # File: _version.py
 #
-# Copyright 2020 Vincent Schouten
+# Copyright 2019 Vincent Schouten
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 #  of this software and associated documentation files (the "Software"), to
@@ -58,8 +58,8 @@ LOCAL_VERSION_FILE_PATH = os.path.abspath(
 )
 
 try:
-    with open(VERSION_FILE_PATH) as f:
+    with open(VERSION_FILE_PATH, encoding='utf8') as f:
         __version__ = f.read()
 except IOError:
-    with open(LOCAL_VERSION_FILE_PATH) as f:
+    with open(LOCAL_VERSION_FILE_PATH, encoding='utf8') as f:
         __version__ = f.read()
