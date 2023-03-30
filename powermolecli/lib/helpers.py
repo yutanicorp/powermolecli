@@ -80,7 +80,7 @@ def on_send_command(instructor):
             response_str = response_raw.decode("utf-8")
             response_line = response_str.split('\n')
             for line in response_line:
-                print('%s' % line)
+                print(line)
         except KeyboardInterrupt:
             print('\n')
             break

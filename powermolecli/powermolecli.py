@@ -169,4 +169,4 @@ def main():
         # the helpers module. the exception is raised when an object (eg. TransferAgent, Tunnel, Assistant)
         # cannot be started (start()) successfully.
         LOGGER.error(msg)
-        raise SystemExit(1)
+        raise SystemExit(1) from None
