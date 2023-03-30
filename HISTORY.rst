@@ -168,3 +168,9 @@ History
 -------------------
 
 * Bump dependency to latest powermole library package
+
+
+1.0.13 (30-03-2023)
+-------------------
+
+* Fix security vulnerability
