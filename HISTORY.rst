@@ -174,3 +174,9 @@ History
 -------------------
 
 * Fix security vulnerability
+
+
+1.0.14 (30-03-2023)
+-------------------
+
+* Fix security vulnerability, fix linting errors, bump dependency
