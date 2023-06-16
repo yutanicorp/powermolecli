@@ -6,7 +6,28 @@ This program will let you perform port forwarding, redirect internet traffic, an
 a host without making a direct connection (ie. via one or more intermediate hosts), which would undoubtedly compromise your privacy.
 This solution can only work when you or your peers own one or more hosts as this program communicates with SSH servers.
 This program can be viewed as a multi-versatile wrapper around SSH with the ProxyJump directive enabled.
-Powermole creates automatically a ssh/scp configuration file to enable key-based authentication with the intermediate hosts.
+Powermole automatically creates a ssh/scp configuration file to enable key-based authentication with the intermediate hosts.
+
+Powermolecli provides two modes:
+
+* TOR mode
+
+  * The target destination host acts as an exit node (in TOR terminology).
+
+* FOR(warding) mode
+
+  * Connections are forwarded to the target destination host.
+
+
+Regardless which mode is enabled, several options are presented when the tunnel is established:
+
+* COMMAND
+
+  * This option provides a rudimentary terminal interface to provide access to OS services on the target destination host.
+
+* TRANSFER
+
+  * This options allows selected files to be transferred to the target destination host.
 
 
 How it works
@@ -32,7 +53,7 @@ For more details, including illustrations, please consult the `powermole library
 Requirements (software)
 =======================
 
-* Every host (except local host, ie. the _client_) needs a running SSH daemon.
+* Every host (except local host, ie. the *client*) needs a running SSH daemon.
 
 
 Requirements (functional)
@@ -44,7 +65,7 @@ Requirements (functional)
 * You need *at least* 1 gateway.
 * You have the associated SSH identification file (i.e. the private key) for these intermediaries.
 * Due to security reasons, SSH password login is not supported.
-* This program don't require root privileges on the client (*to be confirmed*).
+* This program doesn't require root privileges on the client (*to be confirmed*).
 
 
 
@@ -120,7 +141,7 @@ Configuration
 To enable TOR mode
 ------------------
 Edit the JSON document in the configuration file to incorporate the keywords **mode**, **gateways**, **destination**, and *optionally* **application** (shown below) and **port**.
-When **application** is specified, then powermole will start the application of choice once the tunnel is ready.
+When **application** is specified, powermole will start the application of choice once the tunnel is ready.
 Please note, if an instance of that application (eg. Firefox) is already running, powermole will terminate immediately.
 In the example below, powermole drills through 2 intermediate hosts.
 Hitting Ctrl-C in terminal will dismantle the tunnel (and stop the application).
@@ -173,7 +194,7 @@ Hitting Ctrl-C in terminal will dismantle the Tunnel.
 Errors
 ======
 
-When running into issues, consider to start powermolecli with log-level 'debug' and/or
+When running into issues, consider starting powermolecli with log-level 'debug' and/or
 consult the log file in /tmp on destination host.
 
 
