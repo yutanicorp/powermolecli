@@ -180,3 +180,9 @@ History
 -------------------
 
 * Fix security vulnerability, fix linting errors, bump dependency
+
+
+1.0.15 (16-06-2023)
+-------------------
+
+* Document introductory paragraph, and bump dependency to latest powermole library package
