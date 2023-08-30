@@ -243,7 +243,7 @@ So the full workflow after git is initialized is:
 This template is based on pipenv. In order to be compatible with requirements.txt so the actual created package can be used by any part of the existing python ecosystem some hacks were needed.
 So when building a package out of this **do not** simple call
 
-    $ python setup.py sdist bdist_egg
+    $ python setup.py sdist
 
 ## Documentation
 
