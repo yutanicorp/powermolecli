@@ -23,4 +23,4 @@ toml = ">=0.1,<1.0"
 [packages]
 coloredlogs = ">=15.0,<16.0"
 voluptuous = "~=0.11.5"
-powermolelib = "~=3.4.5"
+powermolelib = "~=3.4.7"
