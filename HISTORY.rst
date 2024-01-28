@@ -192,3 +192,9 @@ History
 -------------------
 
 * Add Read The Docs configuration file v2, fix development workflow step _upload, fix documentation build stage, bump dependencies
+
+
+1.0.17 (28-01-2024)
+-------------------
+
+* Bump 3rd party package to fix security vulnerability, update template with newer Python version
