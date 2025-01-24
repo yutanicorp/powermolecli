@@ -197,6 +197,11 @@ Errors
 When running into issues, consider starting powermolecli with log-level 'debug' and/or
 consult the log file in /tmp on destination host.
 
+A common error is that the authenticity of an intermediary host can't be established.
+Meaning no fingerprint exists in the known_hosts file.
+The error in the output "Are you sure you want to continue connecting?" can be easily
+fixed by running the composed SCP including the ProxyJump directive shown in the debug
+log-level.
 
 Development Workflow
 ====================

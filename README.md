@@ -196,7 +196,13 @@ Hitting Ctrl-C in terminal will dismantle the Tunnel.
 ## Errors
 
 When running into issues, consider starting powermolecli with log-level 'debug' and/or
-consult the log file in /tmp on destination host.
+consult the log file in `/tmp` on destination host.
+
+A common error is that the authenticity of an intermediary host can't be established.
+Meaning no fingerprint exists in the `known_hosts` file.
+The error in the output "Are you sure you want to continue connecting?" can be easily
+fixed by running the composed SCP including the ProxyJump directive shown in the debug
+log-level.
 
 
 ## Development Workflow
@@ -211,17 +217,17 @@ The workflow supports the following steps
  * graph
 
 These actions are supported out of the box by the corresponding scripts under _CI/scripts directory with sane defaults based on best practices.
-Sourcing setup_aliases.ps1 for windows powershell or setup_aliases.sh in bash on Mac or Linux will provide with handy aliases for the shell of all those commands prepended with an underscore.
+Sourcing `setup_aliases.ps1` for windows powershell or `setup_aliases.sh` in bash on Mac or Linux will provide with handy aliases for the shell of all those commands prepended with an underscore.
 
-The bootstrap script creates a .venv directory inside the project directory hosting the virtual environment. It uses pipenv for that.
-It is called by all other scripts before they do anything. So one could simple start by calling _lint and that would set up everything before it tried to actually lint the project
+The bootstrap script creates a `.venv` directory inside the project directory hosting the virtual environment. It uses pipenv for that.
+It is called by all other scripts before they do anything. So one could simple start by calling `_lint` and that would set up everything before it tried to actually lint the project
 
-Once the code is ready to be delivered the _tag script should be called accepting one of three arguments, patch, minor, major following the semantic versioning scheme.
+Once the code is ready to be delivered the `_tag` script should be called accepting one of three arguments, patch, minor, major following the semantic versioning scheme.
 So for the initial delivery one would call
 
     $ _tag --minor
 
-which would bump the version of the project to 0.1.0 tag it in git and do a push and also ask for the change and automagically update HISTORY.rst with the version and the change provided.
+which would bump the version of the project to 0.1.0 tag it in git and do a push and also ask for the change and automagically update `HISTORY.rst` with the version and the change provided.
 
 
 So the full workflow after git is initialized is:
